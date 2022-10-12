@@ -2,10 +2,12 @@ asgiref==3.5.2
 certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
+coverage==6.5.0
 cryptography==38.0.1
 defusedxml==0.7.1
 Django==3.2
 django-allauth==0.51.0
+django-filter==22.1
 django-rest-auth==0.9.5
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.0
