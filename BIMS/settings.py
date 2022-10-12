@@ -1,6 +1,7 @@
 """
 Django settings for BIMS project.
 """
+import os
 import sys
 from pathlib import Path
 
@@ -16,6 +17,7 @@ SECRET_KEY = 'django-insecure-c%5*%xgzko531zvq7^==_#e*0d=sm%wj(!43=krxp*!(*phl*g
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 ALLOWED_HOSTS = []
 
@@ -133,6 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
