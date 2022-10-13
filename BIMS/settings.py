@@ -20,6 +20,7 @@ DEBUG = True
 # DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 ALLOWED_HOSTS = ['ec2-54-205-41-54.compute-1.amazonaws.com',
+                 '54.205.41.54',
                  '127.0.0.1']
 
 
@@ -146,20 +147,20 @@ STATIC_ROOT = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# TESTING = 'test' in sys.argv[1:]
-# if TESTING:
-#     print('=========================')
-#     print('In TEST Mode - Disableling Migrations')
-#     print('=========================')
-#     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-#
-#     class DisableMigrations(object):
-#
-#         def __contains__(self, item):
-#             return True
-#
-#         def __getitem__(self, item):
-#             return None
-#
-#     MIGRATION_MODULES = DisableMigrations()
+TESTING = 'test' in sys.argv[1:]
+if TESTING:
+    print('=========================')
+    print('In TEST Mode - Disableling Migrations')
+    print('=========================')
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+    class DisableMigrations(object):
+
+        def __contains__(self, item):
+            return True
+
+        def __getitem__(self, item):
+            return None
+
+    MIGRATION_MODULES = DisableMigrations()
 # python manage.py test -keepdb –parallel
