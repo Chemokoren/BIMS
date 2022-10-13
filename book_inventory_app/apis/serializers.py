@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import serializers, fields
 
 from book_inventory_app.models import Author, Book,Stock
 
@@ -10,6 +10,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 class BookSerializer(serializers.ModelSerializer):
     stocks =serializers.StringRelatedField(many=True,read_only=True)
+    url = fields.URLField(source='get_absolute_url', read_only=True)
 
     class Meta:
         model  = Book

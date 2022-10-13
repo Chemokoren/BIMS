@@ -38,8 +38,18 @@ To deploy this project run
 
 3. Use the access token to query the rest of the api's on authors,books and stock.
 
+## Testing on Postman
 
-## Running Tests
+On the project's root you will find the collection file named as follows:
+
+```
+JamboPay.postman_collection.json
+```
+
+Import it to your Postman App and test any of the endpoints.
+
+
+## Running Automated Tests
 
 To run tests, run any of the following commands
 based on your needs
@@ -63,5 +73,5 @@ based on your needs
 ## API Reference
 
 #### You can access the API reference using the following link:~
-/api/v1/swagger/schema/
+/api/v1/docs/
 

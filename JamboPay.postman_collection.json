@@ -1,0 +1,934 @@
+{
+	"info": {
+		"_postman_id": "3642cc9b-623c-4c37-9122-06315c68781d",
+		"name": "JamboPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "671593"
+	},
+	"item": [
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "author details(get)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkyNTgyLCJpYXQiOjE2NjU0OTIyODIsImp0aSI6ImYyMjI2MWFkNDA5YjRlZTU4MGUzYmVjZWJmMWJiYzQ2IiwidXNlcl9pZCI6NX0.2WTuZw29v5IbcLgP2NQdwX1jvzvVuDeay6qN4psqVWs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/authors/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update author details(put)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkyMTEwLCJpYXQiOjE2NjU0OTE4MTAsImp0aSI6IjRmYjVhOTUwM2IwNTQ5NjliMzFjMDc0MjRhNjdiOGFlIiwidXNlcl9pZCI6NX0.rAksS3pbk3b2Fct0pXY06zGevIYpil42kK8V9bcu2UY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"anii-updated\",\n    \"last_name\": \"chematrya\",\n    \"email\": \"anii@gmail.com\",\n    \"date_of_birth\": \"2022-10-11T06:42:31.372537Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"1",
+								""
+							]
+						},
+						"description": "{{url}}/authors/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "patch author details(patch)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkyMTEwLCJpYXQiOjE2NjU0OTE4MTAsImp0aSI6IjRmYjVhOTUwM2IwNTQ5NjliMzFjMDc0MjRhNjdiOGFlIiwidXNlcl9pZCI6NX0.rAksS3pbk3b2Fct0pXY06zGevIYpil42kK8V9bcu2UY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"anii-updated\",\n    \"last_name\": \"chematriiiiiiiiiiya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"1",
+								""
+							]
+						},
+						"description": "{{url}}/authors/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "delete author (delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkyNTgyLCJpYXQiOjE2NjU0OTIyODIsImp0aSI6ImYyMjI2MWFkNDA5YjRlZTU4MGUzYmVjZWJmMWJiYzQ2IiwidXNlcl9pZCI6NX0.2WTuZw29v5IbcLgP2NQdwX1jvzvVuDeay6qN4psqVWs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/authors/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"3",
+								""
+							]
+						},
+						"description": "{{url}}/authors/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all authors(get)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkxNzYwLCJpYXQiOjE2NjU0OTE0NjAsImp0aSI6ImE2ZGJhZmU3YTllMDQ1Y2E5NzVjMDdmODUyN2MzNzY4IiwidXNlcl9pZCI6NX0.sKedexCjrKkghjxuH08jsBo__5b0UqG1NkQftKFJ_Pg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/authors/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								""
+							]
+						},
+						"description": "http://127.0.0.1:8000/api/v1/authors/"
+					},
+					"response": []
+				},
+				{
+					"name": "add a new author(post)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkxNzYwLCJpYXQiOjE2NjU0OTE0NjAsImp0aSI6ImE2ZGJhZmU3YTllMDQ1Y2E5NzVjMDdmODUyN2MzNzY4IiwidXNlcl9pZCI6NX0.sKedexCjrKkghjxuH08jsBo__5b0UqG1NkQftKFJ_Pg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"arap\",\n    \"last_name\":\"arap\",\n    \"email\":\"arap@gmail.com\",\n    \"date_of_birth\":\"2022-10-11 06:42:31.372537\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Add a new Book(post)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"anii\",\n    \"year_of_publication\":\"2022\",\n    \"description\":\"anii\",\n    \"author\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						},
+						"description": "{{url}}/books/"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all books(get)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/books/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						},
+						"description": "{{url}}/books/"
+					},
+					"response": []
+				},
+				{
+					"name": "book details(get)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NTAwNjI3LCJpYXQiOjE2NjU1MDAzMjcsImp0aSI6IjEzNjQyNTM4YWY1OTQ2NjBiMjM0NmEwMjgzNWNlZDJmIiwidXNlcl9pZCI6NX0.gYoKhZF7QkPjPYNLPAiBSUPTu9IW7zcqDDRNzb05FtQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/books/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"2",
+								""
+							]
+						},
+						"description": "{{url}}/books/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "patch book details",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NTAxMDY1LCJpYXQiOjE2NjU1MDA3NjUsImp0aSI6ImYwYWJiYmRhZmVjNTQ0YWI5ZDhkMGI4MTFiOGY1NGNlIiwidXNlcl9pZCI6NX0.9v71FzQ6OnJLgr8D3Dmz05Uvi4MU6AzXjSIbCyJDrto",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Pytest -basics-updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"2",
+								""
+							]
+						},
+						"description": "{{url}}/books/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "update book details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NTAxMDY1LCJpYXQiOjE2NjU1MDA3NjUsImp0aSI6ImYwYWJiYmRhZmVjNTQ0YWI5ZDhkMGI4MTFiOGY1NGNlIiwidXNlcl9pZCI6NX0.9v71FzQ6OnJLgr8D3Dmz05Uvi4MU6AzXjSIbCyJDrto",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Pytest -basics-updated\",\n    \"year_of_publication\":\"2022\",\n    \"description\":\"Testing using Pytest\",\n    \"author\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"2",
+								""
+							]
+						},
+						"description": "{{url}}/books/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "search books by year of publication, author",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/books/list?search=tom",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "tom"
+								}
+							]
+						},
+						"description": "{{url}}/book/list?search=tom"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "fetch all stock(get)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NTExNzM0LCJpYXQiOjE2NjU1MTE0MzQsImp0aSI6IjFiZTM0NWNlYTBhYjRmZDE4MjIxODdiMjkzYjhjOTc5IiwidXNlcl9pZCI6NX0.kLkJyAxG9sJe0aX5zq0LauFWdN_W3L985b1Nuk76L8E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/stock/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								""
+							]
+						},
+						"description": "{{url}}/stock/"
+					},
+					"response": []
+				},
+				{
+					"name": "add new item to stock(post)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"book\":\"3\",\n    \"quantity\":\"40\",\n    \"description\":\"I am liking it here\",\n    \"status\":\"Good\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stock/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								""
+							]
+						},
+						"description": "{{url}}/stock/"
+					},
+					"response": []
+				},
+				{
+					"name": "get stock detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stock/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								"4",
+								""
+							]
+						},
+						"description": "{{url}}/stock/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "patch stock detail",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"quantity\": \"1\",\n        \"description\": \"4th being updated to 16 -updated-last\",\n        \"status\": \"Good\",\n        \"book\": 1\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stock/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								"4",
+								""
+							]
+						},
+						"description": "{{url}}/stock/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "update stock detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"quantity\": \"16\",\n        \"description\": \"4th being updated to 16\",\n        \"status\": \"Good\",\n        \"book\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stock/4/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								"4",
+								""
+							]
+						},
+						"description": "{{url}}/stock/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete stock detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/stock/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stock",
+								"1",
+								""
+							]
+						},
+						"description": "{{url}}/stock/3/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1",
+								""
+							]
+						},
+						"description": "http://127.0.0.1:8000/api/v1/users/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "save a new user(post)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDY5MzM0LCJpYXQiOjE2NjU0NjkwMzQsImp0aSI6IjVlNTllZmUxZmEwMjRjNWFiY2U4ZWIwNzM1MDZlMDlkIiwidXNlcl9pZCI6MX0.Lwew7zY9iGyGyK1t49P33p4fbFSUmQZ9DHP7BAbSYwk",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"first_name\": \"kijana\",\n        \"last_name\": \"kijana\",\n        \"username\": \"kijana\",\n        \"email\": \"kijana@gmail.com\",\n        \"password\": \"masai123$$\",\n        \"password2\": \"masai123$$\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "http://127.0.0.1:8000/api/v1/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all users(get)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkxNzYwLCJpYXQiOjE2NjU0OTE0NjAsImp0aSI6ImE2ZGJhZmU3YTllMDQ1Y2E5NzVjMDdmODUyN2MzNzY4IiwidXNlcl9pZCI6NX0.sKedexCjrKkghjxuH08jsBo__5b0UqG1NkQftKFJ_Pg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "http://127.0.0.1:8000/api/v1/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "user details(get)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDg2OTQ3LCJpYXQiOjE2NjU0ODY2NDcsImp0aSI6IjM2ZWFiMDFjOGFhNjRmZDE5NmEzYzkzOThiZmZjYzgzIiwidXNlcl9pZCI6NX0.LBFa8YMG8uhLRWwNhAqAq982wpBmOtlpTs_6c2ZdGhA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"3",
+								""
+							]
+						},
+						"description": "{{url}}/users/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDg2OTQ3LCJpYXQiOjE2NjU0ODY2NDcsImp0aSI6IjM2ZWFiMDFjOGFhNjRmZDE5NmEzYzkzOThiZmZjYzgzIiwidXNlcl9pZCI6NX0.LBFa8YMG8uhLRWwNhAqAq982wpBmOtlpTs_6c2ZdGhA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"koko-updated\",\n    \"email\": \"koko@gmail.com\",\n    \"first_name\": \"koko\",\n    \"last_name\": \"koko\",\n    \"password\": \"masai123\",\n    \"password2\": \"masai123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/3/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "nai",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nai@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456$$",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "123456$$",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "nai",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "nai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/register/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register",
+								""
+							]
+						},
+						"description": "http://127.0.0.1:8000/api/v1/register/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generate token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData =JSON.parse(responseBody);",
+							"console.log(\"aaaa\")",
+							"console.log(jsonData['access'])",
+							"",
+							"postman.setEnvironmentVariable(\"access_token\",jsonData.access);",
+							"postman.setEnvironmentVariable(\"refresh_token\",jsonData.refresh);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 0961c79f1377a155682fd5b2983f8382160cf02d",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "kijana@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "masai123$$",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/token/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/token/refresh/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user: blacklist refresh token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/logout/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout",
+						""
+					]
+				},
+				"description": "{{url}}/logout/"
+			},
+			"response": []
+		}
+	]
+}

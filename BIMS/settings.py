@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    'drf_yasg',
 
     # custom apps
     'authentication',
@@ -60,7 +59,7 @@ ROOT_URLCONF = 'BIMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'BIMS.context_processors.globalVariable',
             ],
         },
     },
@@ -78,7 +78,8 @@ WSGI_APPLICATION = 'BIMS.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 CORS_ALLOWED_ORIGINS=[
     "http://localhost:3000"
@@ -144,7 +145,6 @@ STATIC_ROOT = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SITE_NAME='Book Inventory Management System'
 
 # TESTING = 'test' in sys.argv[1:]
 # if TESTING:
