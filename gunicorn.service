@@ -6,7 +6,7 @@ After=network.target
 [Service]
 User=root
 Group=www-data
-WorkingDirectory=/var/lib/jenkins/workspace/django-cicd/BIMS
+WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
 ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log --bind unix:/run/gunicorn.sock BIMS.wsgi:application
 
 [Install]
