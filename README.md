@@ -5,12 +5,11 @@ This is the design & implementation of a bookstore inventory management system.
 
 # Setup
 1. Clone the project using the approach most flexible to you or simply downlod
-
 2. Setup your virtual environment
-
 3. cd to the project's root directory
-
-4. Run the requirements.txt file using the following command
+4. Add DEBUG, SECRET_KEY to .env file
+5. Add ALLOWED_HOSTS e.g. '127.0.0.1' when testing in your localhost 
+6. Run the requirements.txt file using the following command
 
 ```
 pip install -r requirements.txt
