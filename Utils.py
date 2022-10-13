@@ -26,29 +26,6 @@ def evaluate_stock_status(quantity):
         status =Status.BAD
     elif quantity >= 1 and quantity < 5:
         status =Status.CRITICAL
-    elif quantity == 0:
+    elif quantity <= 0:
         status =Status.OUT_OF_STOCK
     return status
-
-
-
-class BaseTestCase(TestCase):
-
-    def setUp(self):
-        self.email = 'test@gmail.com'
-        self.username = 'test'
-        self.password = '123456'
-        self.user = User.objects.create_user(email=self.email, password=self.password, username=self.username)
-
-        self.data = {
-            'email': self.email,
-            'password': self.password
-        }
-        self.client = Client()
-        self.token_url = reverse('authentication_apis:token_obtain_pair')
-
-    def return_active_token(self):
-        """Method returns an active access token after a successful login."""
-        response = self.client.post(BaseTestCase().token_url, self.data, format='json')
-        auth = 'Bearer {0}'.format(response.data['access'])
-        return auth

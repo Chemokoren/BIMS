@@ -1,10 +1,9 @@
 from rest_framework import serializers
-from rest_framework.relations import PrimaryKeyRelatedField
 
 from book_inventory_app.models import Author, Book,Stock
 
 class AuthorSerializer(serializers.ModelSerializer):
-    books = serializers.StringRelatedField(many=True)
+    books = serializers.StringRelatedField(many=True,read_only=True)
     class Meta:
         model  = Author
         fields = "__all__"

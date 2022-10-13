@@ -74,7 +74,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_absolute_url(self):
         """user absolute url"""
-        return reverse("authentication_apis:user-info", args=[str(self.id)])
+        return reverse("authentication_apis:user-detail", args=[str(self.id)])
 
     def __str__(self):
         """returns a string representation of the `User`."""

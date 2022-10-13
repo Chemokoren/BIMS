@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    'drf_yasg',
 
     # custom apps
     'authentication',
@@ -142,7 +143,7 @@ STATIC_ROOT = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+SITE_NAME='Book Inventory Management System'
 
 # TESTING = 'test' in sys.argv[1:]
 # if TESTING:

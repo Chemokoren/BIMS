@@ -12,7 +12,6 @@ import datetime
 
 class ApiAuthorViewTests(TestCase):
 
-
     def setUp(self):
         self.first_name = 'author'
         self.last_name = 'author'
@@ -75,18 +74,18 @@ class ApiAuthorViewTests(TestCase):
         resp = self.client.patch(url, data, content_type='application/json')
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
-    # def test_update_author_info_api(self):
-    #     """Test update author"""
-    #     data = json.dumps({
-    #                 "first_name": "author-updated",
-    #                 "last_name": "author-updated",
-    #                 "email": "author@gmail.com"
-    #             })
-    #
-    #     url = reverse('book_inv_apis:author-detail', kwargs={'pk': self.author.pk})
-    #     resp = self.client.put(url, data, HTTP_AUTHORIZATION=self.auth,content_type='application/json')
-    #     print("aniii::", resp.data,datetime.now())
-    #     self.assertEqual(resp.status_code, status.HTTP_200_OK)
+    def test_update_author_info_api(self):
+        """Test update author"""
+        data = {
+                    "first_name": "author-updated",
+                    "last_name": "author-updated",
+                    "email": "author@gmail.com",
+                    "date_of_birth":datetime.datetime.now()
+                }
+
+        url = reverse('book_inv_apis:author-detail', kwargs={'pk': self.author.pk})
+        resp = self.client.put(url, data, HTTP_AUTHORIZATION=self.auth,content_type='application/json')
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
 
     def test_delete_author_info_api(self):
