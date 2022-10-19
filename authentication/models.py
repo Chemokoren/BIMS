@@ -57,9 +57,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     address             = models.CharField(max_length=200, null=True, blank=True)
     zip_code            = models.CharField(max_length=200, null=True, blank=True)
     date_joined         = models.DateTimeField(default=timezone.now)
+    created_on          = models.DateTimeField(auto_now_add=True)
+    updated_on          = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name','username']
 
     def save(self, *args, **kwargs):
         """Overriding the save method to update slug field"""

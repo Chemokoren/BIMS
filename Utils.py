@@ -1,4 +1,5 @@
 from django.test import TestCase, Client
+from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
 from authentication.models import User
@@ -19,6 +20,7 @@ class Status(Enum):
 
 def evaluate_stock_status(quantity):
     """Takes in the stock quantity and returns the corresponding status."""
+    quantity =validate_number(quantity)
     status=None
     if quantity >=10:
         status =Status.GOOD
@@ -29,3 +31,12 @@ def evaluate_stock_status(quantity):
     elif quantity <= 0:
         status =Status.OUT_OF_STOCK
     return status
+
+def validate_number(val):
+    """validate if val is a number"""
+    try:
+        num = float(val)
+
+        return num
+    except ValueError:
+        return Response({'messge':'value provided is not a number'})

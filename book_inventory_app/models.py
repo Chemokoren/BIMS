@@ -1,6 +1,8 @@
 from django.db import models
 import django.utils.timezone
 from rest_framework.reverse import reverse
+from simple_history.models import HistoricalRecords
+
 from Utils import Status
 
 class Author(models.Model):
@@ -9,6 +11,8 @@ class Author(models.Model):
     last_name       = models.CharField(max_length=50)
     email           = models.EmailField(db_index=True, unique=True)
     date_of_birth   = models.DateTimeField(null=True,blank=True, default=django.utils.timezone.now)
+    created_on      = models.DateTimeField(auto_now_add=True)
+    updated_on      = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-id']
@@ -24,6 +28,8 @@ class Book(models.Model):
     year_of_publication = models.CharField(max_length=50)
     description         = models.TextField(db_index=True, unique=True)
     author              = models.ForeignKey(Author, related_name="books", on_delete=models.CASCADE)
+    created_on          = models.DateTimeField(auto_now_add=True)
+    updated_on          = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-id']
@@ -43,9 +49,14 @@ class Stock(models.Model):
         ('OS', Status.OUT_OF_STOCK.value)
     ]
     book          = models.ForeignKey(Book, related_name="stocks", on_delete=models.CASCADE)
-    quantity      = models.CharField(max_length=50)
+    quantity      = models.DecimalField(max_length=50,decimal_places=2, max_digits=10)
     description   = models.TextField(db_index=True, unique=True)
-    status        = models.CharField(max_length=23, choices=STATUS_CHOICES, null=True, blank=True, default=Status.GOOD.value)
+    status        = models.CharField(max_length=25, choices=STATUS_CHOICES, null=True, blank=True, default=Status.GOOD.value)
+    history       = HistoricalRecords(
+        custom_model_name='StockHistory'
+    )
+    created_on    = models.DateTimeField(auto_now_add=True)
+    updated_on    = models.DateTimeField(auto_now=True)
 
 
     class Meta:
