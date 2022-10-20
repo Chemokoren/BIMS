@@ -4,7 +4,6 @@ from rest_framework import status
 from rest_framework.test import APIRequestFactory, force_authenticate
 from authentication.models import User
 from authentication.apis.views import UserViewSet
-import requests
 import json
 
 class BaseTestCase(TestCase):

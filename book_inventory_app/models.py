@@ -24,7 +24,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     """Book Model"""
-    title               = models.CharField(max_length=50)
+    title               = models.CharField(max_length=50, unique=True)
     year_of_publication = models.CharField(max_length=50)
     description         = models.TextField(db_index=True, unique=True)
     author              = models.ForeignKey(Author, related_name="books", on_delete=models.CASCADE)

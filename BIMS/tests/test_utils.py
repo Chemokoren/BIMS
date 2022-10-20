@@ -1,5 +1,5 @@
 from django.test import TestCase
-from Utils import evaluate_stock_status, Status
+from Utils import evaluate_stock_status, Status,validate_number
 class UtilsTestcase(TestCase):
     """Testing the Utils"""
 
@@ -26,3 +26,16 @@ class UtilsTestcase(TestCase):
         quantity =-9
         res_status= evaluate_stock_status(quantity)
         self.assertEqual(res_status.value,Status.OUT_OF_STOCK.value)
+
+    def test_is_invalid_number(self):
+        """Test if the provided input is an invalid number"""
+        input_val ="mine"
+        res =validate_number(input_val).data['message']
+        self.assertEqual(res,"value provided is not a number")
+
+    def test_is_valid_number(self):
+        """Test if the provided input is a valid number"""
+        input_val ="25"
+        res =validate_number(input_val)
+        self.assertEqual(res,25)
+

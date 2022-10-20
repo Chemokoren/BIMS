@@ -39,4 +39,4 @@ def validate_number(val):
 
         return num
     except ValueError:
-        return Response({'messge':'value provided is not a number'})
+        return Response({'message':'value provided is not a number'})

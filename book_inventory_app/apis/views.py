@@ -4,9 +4,8 @@ from rest_framework.response import Response
 
 from Utils import evaluate_stock_status
 from book_inventory_app.models import Author, Book, Stock
-from book_inventory_app.apis.serializers import AuthorSerializer, BookSerializer, StockSerializer
+from book_inventory_app.apis.serializers import AuthorSerializer, BookSerializer, StockSerializer,StockHistorySerializer
 from rest_framework.filters import SearchFilter
-
 
 class AuthorViewSet(viewsets.ModelViewSet):
     """Author ViewSet for viewing and editing authors."""
@@ -23,20 +22,24 @@ class BookViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         """Create Book Object"""
+        book_data = request.data
         try:
-            try:
-                book_data = request.data
-                author_info = Author.objects.get(id=book_data["author"])
+            author_info = Author.objects.get(id=book_data["author"])
+
+        except Author.DoesNotExist:
+                return Response({'message': 'Author Object does not exist!'})
+        try:
+            check =Book.objects.filter(title=book_data["title"]) | Book.objects.filter(description=book_data["description"])
+            if check.exists():
+                return Response({'message': 'Book already exists!'})
+            else:
                 new_book = Book.objects.create(title=book_data["title"],
                                                year_of_publication=book_data["year_of_publication"],
                                                description=book_data["description"],
                                                author=author_info
                                                )
                 serializer = BookSerializer(new_book)
-            except Author.DoesNotExist:
-                return Response({'message': 'Author Object does not exist!'})
-
-            return Response(serializer.data)
+                return Response(serializer.data)
         except KeyError:
             return Response({'message': 'Book Creation Failed!'})
 
@@ -55,14 +58,15 @@ class StockViewSet(mixins.CreateModelMixin,
         """Create Stock Model"""
         try:
             stock_data = request.data
-            check = Stock.objects.filter(description=stock_data["description"], book=stock_data["book"])
+            check = Stock.objects.filter(book=stock_data["book"])
             if check.exists():
                 print("update stock")
                 data = check.first()
-                new_quantity = int(data.quantity) + int(stock_data["quantity"])
+                new_quantity = float(data.quantity) + float(stock_data["quantity"])
                 res_status = evaluate_stock_status(new_quantity)
                 data.quantity = new_quantity
                 data.status = res_status.value
+                data.description = stock_data['description'] if stock_data['description'] else data.description
                 data.save()
 
                 serializer = StockSerializer(data)
@@ -71,16 +75,16 @@ class StockViewSet(mixins.CreateModelMixin,
                 print("create new stock")
                 try:
                     book_info = Book.objects.get(id=stock_data["book"])
-                    res_status = evaluate_stock_status(stock_data["quantity"])
-                    new_stock = Stock.objects.create(quantity=stock_data["quantity"],
-                                                     description=stock_data["description"],
-                                                     book=book_info,
-                                                     status=res_status)
-                    serializer = StockSerializer(new_stock)
-
-                    return Response(serializer.data)
                 except Book.DoesNotExist:
                     return Response({'message': 'Book Object does not exist!'})
+                res_status = evaluate_stock_status(stock_data["quantity"])
+                new_stock = Stock.objects.create(quantity=stock_data["quantity"],
+                                                 description=stock_data["description"],
+                                                 book=book_info,
+                                                 status=res_status.value)
+                serializer = StockSerializer(new_stock)
+
+                return Response(serializer.data)
 
 
         except KeyError:
@@ -125,9 +129,13 @@ class StockViewSet(mixins.CreateModelMixin,
             new_quantity = int(data['quantity'])
             res_status = evaluate_stock_status(new_quantity)
 
-            stock_object.quantity = new_quantity if new_quantity else stock_object.quantity
-            stock_object.description = data.get("description", stock_object.description)
-            book_instance = Book.objects.get(id=data.get("book", stock_object.book))
+            try:
+                book_instance = Book.objects.get(id=data.get("book", stock_object.book))
+            except Book.DoesNotExist:
+                return Response({'message': 'Book Object does not exist!'})
+            stock_object.quantity = new_quantity if new_quantity >=0 else stock_object.quantity
+            stock_object.description = data['description'] if data['description'] else stock_object.description
+
             stock_object.book = book_instance
             stock_object.status = res_status.value if res_status else stock_object.status
 
@@ -138,8 +146,25 @@ class StockViewSet(mixins.CreateModelMixin,
         except KeyError:
             return Response({'message': 'Patch Failed!'})
 
+class StockHistoryViewSet(mixins.RetrieveModelMixin,mixins.ListModelMixin,viewsets.GenericViewSet):
+    """Stock History ViewSet for viewing stock history."""
+    queryset = Stock.history.all()
+    serializer_class = StockHistorySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def retrieve(self, request, *args, **kwargs):
+        """Get From StockHistory Model"""
+        try:
+            stock = Stock.history.filter(id=self.kwargs.get('pk'))
+            serializer = StockHistorySerializer(stock, many=True)
+            return Response(serializer.data)
+        except KeyError:
+            return Response({'message': 'Retrieve Failed!'})
+
+
 
 class BookListFilter(generics.ListAPIView):
+    """Filter Books by  year_of_publication, & author"""
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = (DjangoFilterBackend, SearchFilter)

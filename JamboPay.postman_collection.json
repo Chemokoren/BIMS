@@ -137,7 +137,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkxNzYwLCJpYXQiOjE2NjU0OTE0NjAsImp0aSI6ImE2ZGJhZmU3YTllMDQ1Y2E5NzVjMDdmODUyN2MzNzY4IiwidXNlcl9pZCI6NX0.sKedexCjrKkghjxuH08jsBo__5b0UqG1NkQftKFJ_Pg",
+								"value": "Bearer {{access_token}}",
 								"type": "text"
 							}
 						],
@@ -162,7 +162,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NDkxNzYwLCJpYXQiOjE2NjU0OTE0NjAsImp0aSI6ImE2ZGJhZmU3YTllMDQ1Y2E5NzVjMDdmODUyN2MzNzY4IiwidXNlcl9pZCI6NX0.sKedexCjrKkghjxuH08jsBo__5b0UqG1NkQftKFJ_Pg",
+								"value": "Bearer {{access_token}}",
 								"type": "text"
 							}
 						],
@@ -206,7 +206,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\":\"anii\",\n    \"year_of_publication\":\"2022\",\n    \"description\":\"anii\",\n    \"author\":2\n}",
+							"raw": "{\n    \"title\":\"abonyuuk\",\n    \"year_of_publication\":\"2021\",\n    \"description\":\"abonyuuk\",\n    \"author\":1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -405,7 +405,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1NTExNzM0LCJpYXQiOjE2NjU1MTE0MzQsImp0aSI6IjFiZTM0NWNlYTBhYjRmZDE4MjIxODdiMjkzYjhjOTc5IiwidXNlcl9pZCI6NX0.kLkJyAxG9sJe0aX5zq0LauFWdN_W3L985b1Nuk76L8E",
+								"value": "Bearer {{access_token}}",
 								"type": "text"
 							}
 						],
@@ -436,7 +436,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"book\":\"3\",\n    \"quantity\":\"40\",\n    \"description\":\"I am liking it here\",\n    \"status\":\"Good\"\n}",
+							"raw": "{\n        \"quantity\": \"3\",\n        \"description\": \"momoo-updated\",\n        \"book\":1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -481,13 +481,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/stock/4/",
+							"raw": "{{url}}/stock/1/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"stock",
-								"4",
+								"1",
 								""
 							]
 						},
@@ -508,7 +508,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"quantity\": \"1\",\n        \"description\": \"4th being updated to 16 -updated-last\",\n        \"status\": \"Good\",\n        \"book\": 1\n    }",
+							"raw": "    {\n        \"quantity\": \"00\",\n        \"description\": \"momoo-updated-1\",\n        \"book\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -516,13 +516,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/stock/4/",
+							"raw": "{{url}}/stock/1/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"stock",
-								"4",
+								"1",
 								""
 							]
 						},
@@ -543,7 +543,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"quantity\": \"16\",\n        \"description\": \"4th being updated to 16\",\n        \"status\": \"Good\",\n        \"book\": 4\n    }",
+							"raw": "{\n        \"quantity\": \"8\",\n        \"description\": \"momoo-updated-12\",\n        \"book\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -551,13 +551,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/stock/4/",
+							"raw": "{{url}}/stock/1/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"stock",
-								"4",
+								"1",
 								""
 							]
 						},
@@ -755,22 +755,22 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "nai",
+									"value": "jj",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "nai@gmail.com",
+									"value": "jj@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123456$$",
+									"value": "masai123",
 									"type": "text"
 								},
 								{
 									"key": "password2",
-									"value": "123456$$",
+									"value": "masai123",
 									"type": "text"
 								},
 								{
@@ -796,6 +796,62 @@
 							]
 						},
 						"description": "http://127.0.0.1:8000/api/v1/register/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StockHistory",
+			"item": [
+				{
+					"name": "filter stock history by stock id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/history/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history",
+								"1",
+								""
+							]
+						},
+						"description": "{{url}}/history/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "get all stock history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/history/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history",
+								""
+							]
+						},
+						"description": "{{url}}/history/"
 					},
 					"response": []
 				}
